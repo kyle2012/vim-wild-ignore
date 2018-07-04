@@ -6,7 +6,7 @@ if filereadable(filename)
         if line =~ '^#' | con | endif
         if line == '' | con  | endif
         if line =~ '^!' | con  | endif
-        if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
+        if line =~ '/$' | let ignorestr .= "," . line . "*" | con | endif
         let ignorestr .= "," . line
     endfor
     let execstring = "set wildignore=".substitute(ignorestr, '^,', '', "g")
